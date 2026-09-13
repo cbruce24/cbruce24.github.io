@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Canon Bruce — Electrical & Computer Engineering portfolio spanning embedded systems, AI, DSP, and software." />
+  <title>Canon Bruce — ECE + CS Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23101214'/%3E%3Cpath d='M13 32h12l6-13 8 26 6-13h6' fill='none' stroke='%23c8ff2f' stroke-width='5' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./experience.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="nav">
+    <a class="brand" href="#top" aria-label="Canon Bruce home"><span>CB</span><em>Canon Bruce</em></a>
+    <nav aria-label="Primary navigation">
+      <a href="#work">Work</a><a href="#experience">Experience</a><a href="#about">About</a><a href="#resume">Resume</a>
+    </nav>
+    <a class="contact-link" href="mailto:canon.bruce@vanderbilt.edu">Let's talk <span>↗</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Electrical & Computer Engineering · Vanderbilt University</p>
+        <h1>I build at the edge of <span>hardware</span> and <span>software.</span></h1>
+        <p class="lede">Embedded systems, intelligent sensing, signal processing, and the interfaces that make complex technology useful.</p>
+        <p class="role-statement">Seeking engineering roles where I can build and integrate complete systems across hardware, software, sensing, and intelligent automation.</p>
+        <div class="profile-meta"><span>Nashville, Tennessee</span><span>Graduating May 2028</span><a href="https://www.linkedin.com/in/canon-bruce" target="_blank" rel="noreferrer">LinkedIn ↗</a></div>
+        <div class="hero-actions"><a class="button primary" href="#work">Explore selected work</a><a class="button ghost" href="./assets/canon-bruce-resume.pdf" target="_blank">View resume</a></div>
+      </div>
+      <figure class="hero-headshot">
+        <div class="portrait-frame"><img src="./assets/canon-bruce-headshot.png" alt="Canon Bruce wearing a navy suit and burgundy tie"></div>
+        <figcaption><span>Canon Bruce</span><span>ECE + CS · Vanderbilt</span><span class="status">Available · 2027</span></figcaption>
+      </figure>
+    </section>
+
+    <section class="ticker" aria-label="Technical skills"><div>PYTHON <i>◆</i> C++ <i>◆</i> MATLAB <i>◆</i> EMBEDDED SYSTEMS <i>◆</i> FPGA <i>◆</i> QT <i>◆</i> SIGNAL PROCESSING <i>◆</i> HARDWARE INTEGRATION</div></section>
+
+    <section id="work" class="section">
+      <div class="section-head"><div><p class="eyebrow">01 / Selected work</p><h2>Systems built to work<br>in the real world.</h2></div><p>Projects spanning physical hardware, embedded intelligence, signal analysis, and human-centered interfaces.</p></div>
+      <div class="projects case-studies">
+        <article class="project case-study featured">
+          <div class="project-visual vision-visual"><div class="camera-frame"><span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span><div class="board-grid"><i>×</i><i>○</i><i></i><i></i><i>×</i><i></i><i>○</i><i></i><i>×</i></div><p>LOCAL VISION → MINIMAX → MOTION</p></div></div>
+          <div class="project-info"><span class="number">01</span><div><p class="tags">MYARM M750 · RASPBERRY PI 5 · COMPUTER VISION · AI</p><h3>Autonomous Robot Tic-Tac-Toe</h3><p class="summary">Built an end-to-end system that watches a human play, interprets the board, chooses an optimal response with minimax, and physically places its piece—all locally on a Raspberry Pi 5.</p>
+            <div class="metrics"><span><strong>9</strong> board cells taught</span><span><strong>1-line</strong> arm switching</span><span><strong>100%</strong> on-device</span></div>
+            <details><summary>Read the engineering case study <span>+</span></summary><div class="detail-grid">
+              <section><h4>The challenge</h4><p>The arm’s internal position model was not dependable enough for repeatable physical play. A live reading taken during motion could introduce drift, and unguarded joint commands risked pushing the hardware into its limits.</p></section>
+              <section><h4>Control system</h4><p>I built calibration and teaching scripts that let an operator jog one joint at a time, record stable poses, replay them safely, and enforce live joint limits. Every piece-storage and board position was then taught and validated by hand.</p></section>
+              <section><h4>Reliability decision</h4><p>I rebuilt pick-and-place around stored, verified positions instead of trusting changing sensor readings mid-motion. That practical choice made physical execution repeatable on imperfect research hardware.</p></section>
+              <section><h4>Reusable platform</h4><p>I consolidated six generations of code into one verified project, added multi-arm support through a single configuration change, and extracted the control layer into a documented myArm M750 Operator Kit for future projects.</p></section>
+            </div><div class="flow"><span>Camera reads board</span><b>→</b><span>Minimax selects move</span><b>→</b><span>Stored pose replay</span><b>→</b><span>Arm places piece</span></div></details>
+          </div></div>
+        </article>
+
+        <article class="project case-study featured paint-card">
+          <div class="project-visual paint-visual"><div class="paint-path"><span class="tile t1"></span><span class="tile t2"></span><span class="tile t3"></span><span class="tile t4 active"></span><i class="stroke s1"></i><i class="stroke s2"></i><i class="stroke s3"></i><div class="roller">400 mm TOOL OFFSET</div></div></div>
+          <div class="project-info"><span class="number">02</span><div><p class="tags">ROBOTICS · CALIBRATION · VISION · GO · HTMX</p><h3>Vision-Guided Floor-Painting Arm</h3><p class="summary">Developing an autonomous painting system that finds a taped-off floor tile, infers its correct color from the surrounding checkerboard, paints it with a roller, and performs a quality-control pass.</p>
+            <div class="metrics"><span><strong>400 mm</strong> roller offset</span><span><strong>7 mm</strong> error per 1°</span><span><strong>3</strong> pipeline stages</span></div>
+            <details><summary>Read the engineering case study <span>+</span></summary><div class="detail-grid">
+              <section><h4>Perception</h4><p>I built a pipeline that locates the taped tile and reads the checkerboard around it to decide the target color. It flags uncertainty instead of making a bad paint decision, and I used synthetic images to test the vision logic before the physical setup existed.</p></section>
+              <section><h4>Calibration</h4><p>I mapped camera coordinates into the arm’s working space with hand-probed reference points, avoiding dependence on questionable built-in positioning. The process also measured and confirmed the roller’s true 400 mm offset.</p></section>
+              <section><h4>Motion precision</h4><p>A one-degree wrist error becomes roughly seven millimeters at the roller tip. I hand-teach several points with limp joints, then replay a smoothed path through those exact poses to produce a controlled stripe.</p></section>
+              <section><h4>Ownership and interface</h4><p>When two teammates became unavailable, I carried the calibration, perception, and motion work forward myself. I also built a Go + HTMX dashboard on the Pi with a live camera feed to run and monitor detection, painting, and QA.</p></section>
+            </div><div class="status-strip"><span>PROVEN: perception, calibration, single stripe</span><span>NEXT: gap-free full-tile coverage + floor-light recalibration</span></div></details>
+          </div></div>
+        </article>
+
+        <article class="project case-study">
+          <figure class="project-visual product-photo"><img src="./assets/legacy-audio-touchscreen-product.png" alt="Legacy Audio touchscreen interface displayed on a seven-inch embedded control panel beside Raspberry Pi hardware"><figcaption>Original interface design · Product visualization</figcaption></figure>
+          <div class="project-info"><span class="number">03</span><div><p class="tags">RASPBERRY PI 4 · QT · ADAU1467 SIGMADSP</p><h3>Legacy Audio Touchscreen Controller</h3><p class="summary">Created a production-minded 7-inch touchscreen control surface for professional audio hardware, translating dense DSP functionality into a fast, understandable interface.</p><details><summary>Technical scope <span>+</span></summary><div class="detail-grid"><section><h4>Controls</h4><p>Unified volume, mute, input selection, presets, parametric EQ, subwoofer settings, brightness, standby, and interface locking.</p></section><section><h4>Integration</h4><p>Connected a Raspberry Pi 4 and Qt application to an ADAU1467 SigmaDSP, handling bidirectional state between a touch interface and the audio system.</p></section><section><h4>Product thinking</h4><p>Designed around real operator workflows rather than exposing raw DSP parameters, with clear feedback and controls suitable for a dedicated embedded display.</p></section><section><h4>Outcome</h4><p>Completed a working prototype and demonstrated the full control experience to the engineering team.</p></section></div></details></div></div>
+        </article>
+
+        <article class="project case-study">
+          <div class="project-visual audio-visual"><div class="wave"><i style="--h:28%"></i><i style="--h:55%"></i><i style="--h:82%"></i><i style="--h:44%"></i><i style="--h:70%"></i><i style="--h:35%"></i><i style="--h:91%"></i><i style="--h:64%"></i><i style="--h:40%"></i><i style="--h:76%"></i><i style="--h:48%"></i><i style="--h:68%"></i></div><div class="matrix"><span>20 SPEAKERS</span><b>95.0% ACCURACY</b><span>57 / 60 CORRECT</span></div></div>
+          <div class="project-info"><span class="number">04</span><div><p class="tags">MATLAB · MFCC · EUCLIDEAN CLASSIFICATION</p><h3>Speaker Identification System</h3><p class="summary">Built and evaluated a voice-identification pipeline across four datasets, 20 speakers, and 60 unknown recordings, achieving 95% overall accuracy.</p><details><summary>Methods and findings <span>+</span></summary><div class="detail-grid"><section><h4>Feature pipeline</h4><p>Extracted 13 MFCCs per frame, stacked three training recordings per speaker, and reduced each database to a representative 13-dimensional mean feature vector.</p></section><section><h4>Classification</h4><p>Processed three unseen recordings per speaker and used Euclidean distance to choose the closest known voice, recording every comparison and result for analysis.</p></section><section><h4>Results</h4><p>Correctly classified 57 of 60 tests. Two datasets reached 100%, with the others at 93.3% and 86.7%.</p></section><section><h4>Error analysis</h4><p>Identified a repeat Daniel/Eliza confusion and traced it to averaging away pitch and temporal information. Proposed pitch features or a more expressive model as the next improvement.</p></section></div></details></div></div>
+        </article>
+
+        <article class="project case-study wide">
+          <figure class="project-visual hardware-photo"><img src="./assets/fsm-vending-machine-fpga.png" alt="Finite-state vending machine running on an FPGA development board with seven-segment output showing 25"><figcaption><span>Physical FPGA implementation</span><strong>DE-10 · 25¢ threshold</strong></figcaption></figure>
+          <div class="project-info"><span class="number">05</span><div><p class="tags">SYSTEMVERILOG · QUARTUS · DE10-LITE FPGA</p><h3>Finite-State Vending Machine</h3><p class="summary">Designed a complete ten-state vending-machine controller that accepts nickels, dimes, and quarters, dispenses at 25 cents, and returns correct change in hardware.</p><details><summary>Design through deployment <span>+</span></summary><div class="detail-grid"><section><h4>Architecture</h4><p>Translated system behavior into a state diagram, exhaustive transition table, next-state equations, and output logic for totals from 0 to 45 cents.</p></section><section><h4>Implementation</h4><p>Used one-hot state encoding and clocked D flip-flop behavior in SystemVerilog, then integrated the module with display and I/O circuitry in Quartus.</p></section><section><h4>Verification</h4><p>Created a testbench for coin sequences and change scenarios, validated the simulation waveforms, and only then programmed the physical DE10-Lite board.</p></section><section><h4>Hardware result</h4><p>Switches acted as coin inputs, a pushbutton supplied the clock, LEDs showed dispense/change signals, and seven-segment displays tracked accumulated value correctly.</p></section></div></details></div></div>
+        </article>
+
+        <article class="project case-study">
+          <div class="project-visual orbit-visual"><div class="orbit-system"><span class="sun"></span><span class="orbit o1"><i></i></span><span class="orbit o2"><i></i></span><span class="orbit o3"><i></i></span><p>N-BODY STATE · t + Δt</p></div></div>
+          <div class="project-info"><span class="number">06</span><div><p class="tags">C++ · DESIGN PATTERNS · NEWTONIAN PHYSICS · JSON</p><h3>Gravitational System Simulator</h3><p class="summary">Implemented a multi-object orbital simulation that models stars, planets, asteroids, and comets using gravitational forces, time-stepped motion, and a pattern-driven C++ architecture.</p>
+            <div class="metrics"><span><strong>4</strong> celestial object types</span><span><strong>1 sec</strong> Earth-orbit timestep</span><span><strong>3+</strong> design patterns</span></div>
+            <details><summary>Architecture and simulation <span>+</span></summary><div class="detail-grid">
+              <section><h4>Physics engine</h4><p>Computed pairwise force with the law of universal gravitation, summed net force on every moving body, converted force into acceleration, and advanced velocity and position through discrete time steps.</p></section>
+              <section><h4>State consistency</h4><p>Cloned the universe into a snapshot before each step so every body’s next state is calculated from the same unchanged moment. This prevents earlier updates from contaminating later calculations within a timestep.</p></section>
+              <section><h4>Software architecture</h4><p>Used a Singleton to manage the universe, an Abstract Factory to validate and create celestial bodies, polymorphic object classes, a Visitor for type-specific output, and clone-based Prototype behavior for snapshots.</p></section>
+              <section><h4>Data and safeguards</h4><p>Parsed JSON configurations into the appropriate object types, enforced mass and uniqueness constraints, kept the first object fixed as the central star, and handled zero-distance force safely.</p></section>
+            </div><div class="flow"><span>JSON object data</span><b>→</b><span>Factory + validation</span><b>→</b><span>Force snapshot</span><b>→</b><span>New system state</span></div></details>
+          </div></div>
+        </article>
+
+        <article class="project case-study">
+          <div class="project-visual vector-visual"><div class="vector-space"><span class="axis x"></span><span class="axis y"></span><span class="axis z"></span><i class="vector-arrow"></i><b>Vector&lt;DIM&gt;</b><em>no dynamic allocation</em></div></div>
+          <div class="project-info"><span class="number">07</span><div><p class="tags">MODERN C++ · TEMPLATES · STL ALGORITHMS · OPERATOR OVERLOADING</p><h3>Compile-Time Vector Mathematics Library</h3><p class="summary">Designed a fixed-dimension mathematical vector class from its expected client behavior, supporting natural algebraic syntax without STL containers, dynamic allocation, or explicit loops.</p>
+            <details><summary>Library design <span>+</span></summary><div class="detail-grid">
+              <section><h4>Generic interface</h4><p>Built a class template parameterized by dimension with fixed internal storage, const iterators, indexed access, copy semantics, and readable string conversion.</p></section>
+              <section><h4>Mathematics</h4><p>Implemented addition, subtraction, inversion, scalar multiplication and division, dot products, norms, normalization, compound assignment, and floating-point-aware equality.</p></section>
+              <section><h4>Language constraints</h4><p>Replaced explicit loops with standard algorithms, lambdas, accumulation, and custom functors. Added commutative scalar multiplication and a specialized three-dimensional cross product.</p></section>
+              <section><h4>API reasoning</h4><p>Inferred the public interface from driver and test behavior rather than a supplied header, then used method reuse and noexcept annotations to keep the implementation compact and predictable.</p></section>
+            </div></details>
+          </div></div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="experience" class="section experience">
+      <div class="section-head"><div><p class="eyebrow">02 / Experience</p><h2>Engineering with<br>people in the loop.</h2></div></div>
+      <div class="timeline">
+        <article><div><span>Summer 2026</span><h3>SiteVue AI</h3><p>Electrical / Embedded Systems Intern</p></div><div class="experience-copy"><p>Owned substantial portions of two Raspberry Pi 5 robotics systems built around an Elephant Robotics myArm M750 and onboard vision.</p><ul><li>Built local perception, calibration, motion-control, and safety tooling for autonomous tic-tac-toe and floor painting.</li><li>Consolidated six code generations into a verified system and packaged reusable arm controls into an Operator Kit.</li><li>Created a Go + HTMX dashboard for live camera monitoring and execution of the detect, paint, and QA pipeline.</li></ul></div></article>
+        <article><div><span>Spring 2026</span><h3>Legacy Audio</h3><p>Software Engineering Intern</p></div><div class="experience-copy"><p>Developed the touchscreen control experience for a professional audio system built around a Raspberry Pi 4 and ADAU1467 SigmaDSP.</p><ul><li>Integrated volume, mute, source selection, presets, EQ, subwoofer settings, brightness, standby, and locking.</li><li>Translated low-level DSP functions into an interface designed for intuitive operation on a dedicated 7-inch display.</li><li>Delivered and demonstrated a working end-to-end prototype to the engineering team.</li></ul></div></article>
+        <article><div><span>Fall 2026—Present</span><h3>Vanderbilt ECE</h3><p>Digital Systems TA & Grader</p></div><div class="experience-copy"><p>Support students as they move from digital-logic theory to working FPGA implementations.</p><ul><li>Explain combinational and sequential logic, SystemVerilog, and DE10-Lite implementation during labs.</li><li>Help diagnose incorrect logic, timing behavior, signal routing, and hardware integration issues.</li><li>Evaluate assignments and coordinate with faculty to provide constructive technical feedback.</li></ul></div></article>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <div><p class="eyebrow">03 / About</p><h2>Technical depth.<br><span>Human perspective.</span></h2></div>
+      <div class="about-copy"><p>I’m an Electrical and Computer Engineering student at Vanderbilt, minoring in Computer Science. I’m drawn to problems where circuits, code, sensors, and people meet—and to roles where I can translate technical depth into products and decisions that matter.</p><p>On campus, I serve as Intramural Chair for Theta Tau, Vanderbilt’s professional engineering fraternity, coordinating teams and participation across the organization. I’m especially interested in systems engineering, product management, and technical sales.</p><div class="facts"><div><strong>2028</strong><span>Expected graduation</span></div><div><strong>ECE</strong><span>Major</span></div><div><strong>CS</strong><span>Minor</span></div></div></div>
+    </section>
+
+    <section id="resume" class="section resume-section">
+      <div class="section-head"><div><p class="eyebrow">04 / Resume</p><h2>Education, experience<br>and leadership.</h2></div><div class="resume-actions"><a class="button primary" href="./assets/canon-bruce-resume.pdf" target="_blank">Open full screen ↗</a><a class="button ghost" href="./assets/canon-bruce-resume.pdf" download="Canon-Bruce-Resume.pdf">Download PDF ↓</a></div></div>
+      <div class="resume-frame"><object data="./assets/canon-bruce-resume.pdf#view=FitH&toolbar=0" type="application/pdf" aria-label="Canon Bruce resume"><p>Your browser cannot display the embedded resume. <a href="./assets/canon-bruce-resume.pdf" target="_blank">Open the PDF instead.</a></p></object></div>
+    </section>
+
+    <section class="cta"><p class="eyebrow">Open to 2027 opportunities</p><h2>Let’s build something<br>that has to work.</h2><a href="mailto:canon.bruce@vanderbilt.edu">canon.bruce@vanderbilt.edu <span>↗</span></a></section>
+  </main>
+  <footer><span>© 2026 Canon Bruce</span><span>Engineered in Nashville</span></footer>
+  <script src="./script.js"></script>
+</body>
+</html>
