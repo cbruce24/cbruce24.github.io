@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SiliconIQ case study · Canon Bruce</title>
+  <meta name="description" content="SiliconIQ: an interactive app for comparing NVIDIA and AMD AI accelerators, scoring them against customer priorities, and modeling deployment economics under explicit assumptions.">
+  <meta property="og:title" content="SiliconIQ · AI accelerator strategy & investment analytics">
+  <meta property="og:description" content="Compare accelerators, choose one for your priorities, and test whether a deployment pays off.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://cbruce24.github.io/projects/siliconiq.html">
+  <meta property="og:image" content="https://cbruce24.github.io/assets/img/siliconiq-overview.webp">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0a0a'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='26' fill='%23fafaf9'%3ECB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../">Canon Bruce</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="menu-toggle-bars" aria-hidden="true"></span><span>Menu</span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <a href="../#work" aria-current="page">Projects</a>
+        <a href="../#experience">Experience</a>
+        <a href="../#about">About</a>
+        <a href="../#resume">Résumé</a>
+        <a href="../#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <p class="breadcrumb"><a href="../#work">← All projects</a></p>
+
+      <header class="cs-hero">
+        <p class="kicker">Case study · Applied analytics</p>
+        <h1>SiliconIQ</h1>
+        <p class="subtitle">AI accelerator strategy &amp; investment analytics</p>
+        <p class="lede">An interactive application for comparing NVIDIA and AMD accelerators, examining vendor financials, scoring options against customer priorities, and modeling deployment economics under explicit assumptions.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://siliconiq.streamlit.app/" target="_blank" rel="noopener">Open the live demo <span class="sr-only">(opens in a new tab)</span></a>
+          <a class="btn btn-secondary" href="https://github.com/cbruce24/siliconiq" target="_blank" rel="noopener">View source on GitHub <span class="sr-only">(opens in a new tab)</span></a>
+        </div>
+        <dl class="facts">
+          <div><dt>Role</dt><dd>Solo project</dd></div>
+          <div><dt>Timeline</dt><dd>Aug 2026 – present</dd></div>
+          <div><dt>Stack</dt><dd>Python, pandas, SQLite, Streamlit</dd></div>
+          <div><dt>Status</dt><dd>Working prototype, public demo</dd></div>
+        </dl>
+      </header>
+
+      <figure class="cs-shot">
+        <img src="../assets/img/siliconiq-overview.webp" width="1400" height="875" alt="SiliconIQ overview: three workflow entry points, sourced findings from the dataset, and a panel for the user's hypothetical scenario" fetchpriority="high">
+        <figcaption>The overview separates sourced findings (left) from outputs that depend on the visitor’s own assumptions (right).</figcaption>
+      </figure>
+
+      <section class="cs-section" aria-labelledby="cs-problem">
+        <h2 id="cs-problem">Problem and intended user</h2>
+        <div class="cs-body">
+          <p>Engineers, product managers, and analysts evaluating data-center AI hardware have to combine three kinds of information that are rarely in one place, and each is easy to misuse:</p>
+          <ul>
+            <li><strong>Theoretical specifications</strong> such as peak TFLOPS, memory capacity, and bandwidth, which describe a ceiling rather than real throughput.</li>
+            <li><strong>Measured benchmarks</strong>, which are only comparable when workload, precision, system size, and benchmark version match.</li>
+            <li><strong>Economics</strong>: purchase price, utilization, power, and expected business value, none of which vendors publish in a usable form.</li>
+          </ul>
+          <p class="callout">The question SiliconIQ helps answer: <strong>which accelerator fits my priorities, and does deploying it make economic sense under my assumptions?</strong></p>
+          <h3>Why it matters to a customer</h3>
+          <p>Specifications only matter through the decisions they drive. Memory capacity determines whether a model fits on fewer devices. Measured throughput, not peak compute, sets how much work a system does. TDP becomes power and cooling cost over the life of a deployment, and the assumed price drives capital cost and payback. SiliconIQ keeps those links visible so a recommendation can be defended, and changed, when an assumption changes.</p>
+        </div>
+      </section>
+
+      <section class="cs-section" aria-labelledby="cs-built">
+        <h2 id="cs-built">What I built and my role</h2>
+        <div class="cs-body">
+          <p>I designed and built SiliconIQ as a solo project. I defined the intended user and the decision workflow, chose the data sources and the rules for how they may be compared, specified the scoring and financial models, and set the standard that every number be labeled as sourced or assumed.</p>
+          <p>I built the application with AI-assisted development using Claude Code, reviewing the generated code, writing the requirements it had to meet, and verifying behavior with automated tests and end-to-end checks of every page.</p>
+          <h3>Supporting features</h3>
+          <ul>
+            <li>Company financial comparisons from 10-K filings: revenue, growth, margins, R&amp;D, and disclosed segments.</li>
+            <li>A hypothetical vendor investment model with downside, base, and upside scenarios.</li>
+            <li>A sources and methodology page listing every document, comparability rule, and formula.</li>
+            <li>A one-click Excel export containing the dataset and whichever analyses were run in the session.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="cs-section" aria-labelledby="cs-workflow">
+        <h2 id="cs-workflow">Main user workflow</h2>
+        <div class="cs-body">
+          <ol class="steps">
+            <li><div><strong>Compare accelerators.</strong> Pick up to four products and review a grouped specification table, aligned comparison charts, and a separate section of measured MLPerf results that shows workload, precision, system size, units, and comparability next to each result.</div></li>
+            <li><div><strong>Set customer priorities.</strong> Choose a profile (startup inference, enterprise production, or research training), weight five criteria, and enter price assumptions. A weighted decision matrix names the leading option with its score, data coverage, main strengths, and main tradeoff, and warns when the result is a close call.</div></li>
+            <li><div><strong>Evaluate deployment economics.</strong> Enter quantity, price, infrastructure, utilization, power, support, and expected annual value. The app returns a plain-language verdict with total cost of ownership, ROI, NPV, and payback, plus a cost breakdown, cash-flow chart, and an NPV sensitivity grid across utilization and annual value.</div></li>
+          </ol>
+          <p>Selections and assumptions carry between steps, and inputs persist when moving between pages.</p>
+        </div>
+      </section>
+
+      <section class="cs-section" aria-labelledby="cs-data">
+        <h2 id="cs-data">Data sources and assumptions</h2>
+        <div class="cs-body">
+          <p>The bundled dataset is a fixed snapshot assembled on 15 January 2025. Four kinds of values appear in the app, and they are never mixed:</p>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead><tr><th scope="col">Kind</th><th scope="col">Source</th><th scope="col">Coverage</th></tr></thead>
+              <tbody>
+                <tr><td>Reported financials</td><td>SEC Form 10-K filings (6)</td><td>NVIDIA FY2022–FY2024, AMD FY2021–FY2023</td></tr>
+                <tr><td>Theoretical specs</td><td>Official product datasheets</td><td>6 accelerators: H100 SXM5, H100 PCIe, H200 SXM5, A100 SXM4, MI300X, MI250X (dense, non-sparse figures)</td></tr>
+                <tr><td>Measured benchmarks</td><td>MLPerf Inference submissions</td><td>5 results across v4.0 and v3.1 (Llama2-70B, ResNet-50)</td></tr>
+                <tr><td>Hypothetical assumptions</td><td>Entered by the user</td><td>Prices, utilization, business value, discount rate, and every vendor-model input</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>No hardware prices are stored. The software-ecosystem score used in the decision matrix is a qualitative 0–10 judgment, and it is labeled that way.</p>
+          <h3>Example: peak specs vs. measured results</h3>
+          <p>On MLPerf Inference v4.0 Llama2-70B (FP16, 8-accelerator systems), the NVIDIA H100 SXM5 delivered <strong>51,705 tokens/s</strong> against <strong>44,560 for the AMD Instinct MI300X</strong>, about 16% more, even though the MI300X has the higher peak FP16 specification (1,307 vs 990 TFLOPS). A tool that ranked on peak specs alone would point the other way.</p>
+        </div>
+      </section>
+
+      <section class="cs-section" aria-labelledby="cs-arch">
+        <h2 id="cs-arch">Technical architecture</h2>
+        <div class="cs-body">
+          <ul>
+            <li><strong>Data layer:</strong> SQLite with a SQL schema and views for financial ratios, a product catalog, and growth calculations. An idempotent ingestion script builds the database from the bundled dataset on first run.</li>
+            <li><strong>Query layer:</strong> SQL queries returning pandas DataFrames.</li>
+            <li><strong>Model layer:</strong> pure Python modules with no UI dependency for financial ratios, NPV, IRR, payback, ROI, total cost of ownership, the vendor investment model, weighted scoring, and sensitivity grids.</li>
+            <li><strong>Interface:</strong> a multipage Streamlit app with forms for batched inputs, session-persisted widgets, and Altair charts that follow light and dark themes.</li>
+            <li><strong>Export:</strong> an openpyxl workbook generated when the user clicks download.</li>
+          </ul>
+          <p>Keeping the math out of the interface means each formula, and the way each page feeds inputs into it, is covered by unit tests independently of the UI. The project has <strong>77 passing tests</strong>.</p>
+        </div>
+      </section>
+
+      <section class="cs-section" aria-labelledby="cs-tradeoffs">
+        <h2 id="cs-tradeoffs">Engineering and product tradeoffs</h2>
+        <div class="cs-body">
+          <h3>Relative, transparent scoring</h3>
+          <p>Each criterion is min-max normalized across the accelerators being compared. That makes scores easy to explain, but relative: adding or removing a product changes every score. The app says so next to the result rather than presenting the number as absolute.</p>
+          <h3>Missing data is penalized, not hidden</h3>
+          <p>A product with no value for a criterion scores zero on it, and a data-coverage figure shows how complete each product’s data is. Imputing an average would have produced cleaner rankings that were harder to trust.</p>
+          <h3>No stored prices</h3>
+          <p>Every price is a user assumption. That limits out-of-the-box answers but avoids presenting guesses as vendor-reported figures.</p>
+          <h3>A fixed snapshot instead of live data</h3>
+          <p>A bundled, sourced dataset makes results reproducible and every value traceable to a document, at the cost of aging. The in-app reload action rebuilds the database from that snapshot and says plainly that it does not fetch new data.</p>
+          <h3>A deliberately simple value and power model</h3>
+          <p>Annual business value is fixed and does not scale with utilization; only power cost does. Power is modeled as TDP × utilization, which ignores idle draw. Both simplifications are stated next to the results instead of being buried.</p>
+        </div>
+      </section>
+
+      <section class="cs-section" aria-labelledby="cs-limits">
+        <h2 id="cs-limits">Current capabilities and limitations</h2>
+        <div class="cs-body">
+          <h3>Works today</h3>
+          <ul>
+            <li>The full three-step workflow, with selections carried between steps and inputs kept across page changes.</li>
+            <li>Company financials, the hypothetical vendor model, sources and methodology, and Excel export.</li>
+            <li>Light and dark themes and layouts that work down to phone width.</li>
+          </ul>
+          <h3>Limitations</h3>
+          <ul>
+            <li>It is a portfolio prototype with a public demo. It has no production users and uses no proprietary vendor data.</li>
+            <li>The dataset stops at its January 2025 snapshot, so newer products and fiscal years are missing.</li>
+            <li>The H100 PCIe and H200 have no MLPerf results in the dataset, so measured comparisons cover only some products.</li>
+            <li>The cost model covers a single deployment, not cluster-level networking.</li>
+            <li>The free hosting tier sleeps after inactivity, so the first visit can take about 30 seconds to wake.</li>
+          </ul>
+          <h3>Next steps</h3>
+          <p>Import financials from SEC XBRL data automatically, add other accelerators such as Intel Gaudi and Google TPU under the same sourcing rules, and extend the cost model to multi-node clusters.</p>
+        </div>
+      </section>
+
+      <section class="cs-section" aria-labelledby="cs-shots">
+        <h2 id="cs-shots">Screenshots</h2>
+        <div class="cs-body">
+          <div class="gallery">
+            <figure class="shot wide">
+              <img src="../assets/img/siliconiq-compare.webp" width="1400" height="1410" loading="lazy" decoding="async" alt="Compare accelerators page with a grouped specification table and a peak FP16 bar chart for four accelerators">
+              <figcaption>Step 1. Theoretical specifications in a grouped table, kept separate from measured benchmark results further down the page.</figcaption>
+            </figure>
+            <figure class="shot wide">
+              <img src="../assets/img/siliconiq-recommendation.webp" width="1160" height="820" loading="lazy" decoding="async" alt="Recommendation card naming the leading accelerator with its weighted score, data coverage, main strengths, and main tradeoff, above a table of all options">
+              <figcaption>Step 2. The leading option with its score, data coverage, strengths, and tradeoff, under the selected priorities and price assumptions.</figcaption>
+            </figure>
+            <figure class="shot wide">
+              <img src="../assets/img/siliconiq-deployment.webp" width="1400" height="1069" loading="lazy" decoding="async" alt="Deployment economics page with grouped inputs, a scenario summary, a verdict, and result cards for total cost, net benefit, ROI, NPV, payback, and annual power cost">
+              <figcaption>Step 3. Grouped inputs on the left; the scenario summary, verdict, and result cards on the right. Values shown come from default assumptions.</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="../assets/img/siliconiq-sensitivity-dark.webp" width="660" height="450" loading="lazy" decoding="async" alt="NPV sensitivity heatmap across utilization and annual value in dark mode, with the current input outlined">
+              <figcaption>NPV sensitivity in dark mode. The outlined cell is the current input.</figcaption>
+            </figure>
+            <figure class="shot phone">
+              <img src="../assets/img/siliconiq-mobile.webp" width="390" height="1100" loading="lazy" decoding="async" alt="SiliconIQ overview page on a phone-width screen, with content stacked in one column">
+              <figcaption>The same overview at phone width.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <nav class="cs-next" aria-label="Case study links">
+        <a class="text-link" href="../#work">← Back to all projects</a>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://siliconiq.streamlit.app/" target="_blank" rel="noopener">Open the live demo <span class="sr-only">(opens in a new tab)</span></a>
+          <a class="btn btn-secondary" href="https://github.com/cbruce24/siliconiq" target="_blank" rel="noopener">Source code <span class="sr-only">(opens in a new tab)</span></a>
+        </div>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© 2026 Canon Bruce</span>
+      <a href="../#contact">Contact</a>
+    </div>
+  </footer>
+
+  <script src="../script.js" defer></script>
+</body>
+</html>
